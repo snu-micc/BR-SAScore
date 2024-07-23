@@ -80,16 +80,14 @@ scorer = SAScorer(reaction_from=reaction_from, buildingblock_from=buildingblock_
 To use the BRSAScore on you own data, replace the `reaction_from` and `buildingblock_from`
 
 ## Publication
-@article{chen2021deep,
+```bibtex
+@article{chen2024estimating,
   title={Estimating the synthetic accessibility of molecules with building block and reaction-aware SAScore},
   author={Chen, Shuan and Jung, Yousung},
   journal={Journal of Cheminformatics},
-  volume={},
-  number={},
-  pages={},
   year={2024},
   publisher={Springer}
 }
-
+```
 ## License
 This project is covered under the **MIT Liscence**.
