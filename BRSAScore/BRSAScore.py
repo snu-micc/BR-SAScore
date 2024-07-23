@@ -44,12 +44,12 @@ def numMacroAndMulticycle(mol, nAtoms):
     nMultiRingAtoms = sum([v-1 for k, v in multi_ring_atoms.items() if v > 1])
     return nMacrocycles, nMultiRingAtoms
 
-class R2SAScorer():
+class SAScorer():
     def __init__(self, reaction_from='uspto', buildingblock_from='emolecules', frag_penalty=-6.0, complexity_buffer=1.0):
         if reaction_from == 'uspto' and buildingblock_from == 'emolecules':
-            pickle_path = resource_filename('R2SAScore', 'pickle/R2SAScores_%s_%s.pkl.gz' % (reaction_from, buildingblock_from))
+            pickle_path = resource_filename('BRSAScore', 'pickle/BRScores_%s_%s.pkl.gz' % (reaction_from, buildingblock_from))
         else:
-            pickle_path = 'R2SAScore/pickle/R2SAScores_%s_%s.pkl.gz' % (reaction_from, buildingblock_from)
+            pickle_path = 'BRSAScore/pickle/BRScores_%s_%s.pkl.gz' % (reaction_from, buildingblock_from)
         self._fscores = pickle.load(gzip.open(pickle_path))
         self.frag_penalty = frag_penalty
         self.max_score = 0

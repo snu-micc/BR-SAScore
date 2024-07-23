@@ -116,8 +116,8 @@ def main(args):
         print('Preparing BScores from scratch...')
         BScores = prepare_BScores(args)
         
-    R2Scores = get_max_value(RScores, BScores)    
-    save_scores_to_pickle(R2Scores, args['R2Score_path']) 
+    BRScores = get_max_value(RScores, BScores)    
+    save_scores_to_pickle(R2Scores, args['BRScore_path']) 
     return
 
 if __name__ == '__main__':  
@@ -128,7 +128,7 @@ if __name__ == '__main__':
     
     for data in ['Reaction', 'Buildingblock']:
         args['%s_path' % data] = 'data/%s.csv' % args['%s_name' % data]
-        args['%sScore_path' % data[0]] = 'R2SAScore/pickle/%sScores_%s.pkl.gz' % (data[0], args['%s_name' % data])
-    args['R2Score_path'] = 'R2SAScore/pickle/R2SAScores_%s_%s.pkl.gz' % (args['Reaction_name'], args['Buildingblock_name'])
+        args['%sScore_path' % data[0]] = 'BRSAScore/pickle/%sScores_%s.pkl.gz' % (data[0], args['%s_name' % data])
+    args['BRScore_path'] = 'BRSAScore/pickle/BRScores_%s_%s.pkl.gz' % (args['Reaction_name'], args['Buildingblock_name'])
         
     main(args)

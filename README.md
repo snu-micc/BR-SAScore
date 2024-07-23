@@ -1,5 +1,5 @@
-# R2SAScore
-Implementation of R2SAScore developed by Prof. Yousung Jung group at Seoul National University (contact: yousung@gmail.com).
+# BR-SAScore
+Implementation of BR-SAScore developed by Prof. Yousung Jung group at Seoul National University (contact: yousung@gmail.com).
 
 ## Contents
 - [Developer](#developer)
@@ -24,22 +24,22 @@ This repository has been tested on both **Linux** and **Windows** operating syst
 * rdkit (version >= 2019)
 
 ## Installation Guide
-### From pip
+### From Github
 ```
-pip install R2SAScore
+pip install BRSAScore
 ```
 
 ### From Github
 ```
-git clone https://github.com/snu-micc/R2SAScore.git
-cd R2SAScore
+git clone https://github.com/snu-micc/BR-SAScore.git
+cd BR-SAScore
 pip install -e .
 ```
 
 ## Usage
 ```
-from R2SAScore import R2SAScorer
-scorer = R2SAScorer()
+from BRSAScore import SAScorer
+scorer = SAScorer()
 smi = 'CC(OC1=CC=CC=C1C(O)=O)=O' # Aspirin
 score, contribution = scorer.calculateScore(smi)
 ```
@@ -64,23 +64,32 @@ Downlaod the data can put them in `./data/` and rename them to `uspto.csv` and `
 Feel free to change the (atom-mapped) reaction data and building blocks data as long as the data is correctly formatted.
 If the reaction data is not atom-mapped, we recommend to use [LocalMapper](https://github.com/snu-micc/LocalMapper/tree/main) to prepare high-quality the atom-mappings for your reactions.
 
-### [2] Prepare the R2Scores from reaction and building-block data
-Prepare the R2SAScores by
+### [2] Prepare the BRScores from reaction and building-block data
+Prepare the BRSAScores by
 ```
-python scripts/prepare_R2Scores.py -r uspto -b emolecules
+python scripts/prepare_Scores.py -r uspto -b emolecules
 ```
 
-### [3] Use R2SAScocre
+### [3] Use BRSAScocre
 ```
-from R2SAScore import R2SAScorer
+from BRSAScore import SAScorer
 reaction_from = 'uspto'
 buildingblock_from = 'emolecules'
-scorer = R2SAScorer(reaction_from=reaction_from, buildingblock_from=buildingblock_from)
+scorer = SAScorer(reaction_from=reaction_from, buildingblock_from=buildingblock_from)
 ```
-To use the R2SAScore on you own data, replace the `reaction_from` and `reaction_from`
+To use the BRSAScore on you own data, replace the `reaction_from` and `buildingblock_from`
 
 ## Publication
-In review
+@article{chen2021deep,
+  title={Estimating the synthetic accessibility of molecules with building block and reaction-aware SAScore},
+  author={Chen, Shuan and Jung, Yousung},
+  journal={Journal of Cheminformatics},
+  volume={},
+  number={},
+  pages={},
+  year={2024},
+  publisher={Springer}
+}
 
 ## License
 This project is covered under the **MIT Liscence**.
