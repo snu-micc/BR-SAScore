@@ -112,7 +112,7 @@ class SAScorer():
             sascore = 1
         elif sascore < 0.:
             sascore = 0
-        
+        sascore = 10 - sascore*9
         return sascore, contribution
     
     def contribution_to_svg(self, smiles, contribution):
