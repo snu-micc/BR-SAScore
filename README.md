@@ -24,7 +24,7 @@ This repository has been tested on both **Linux** and **Windows** operating syst
 * rdkit (version >= 2019)
 
 ## Installation Guide
-### From Github
+### From Pip
 ```
 pip install BRSAScore
 ```
