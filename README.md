@@ -45,7 +45,7 @@ score, contribution = scorer.calculateScore(smi)
 ```
 The expected output of `score` should be
 ```
-0.8789047205405656
+2.08985751513491
 ```
 See `Demo.ipynb` for the examples of estimating the synthetic accessibility of 18 structurally complex molecules shown in the paper.
 
