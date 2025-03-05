@@ -1,5 +1,5 @@
 # BR-SAScore
-Implementation of BR-SAScore developed by Prof. Yousung Jung group at Seoul National University (contact: yousung@gmail.com).
+Implementation of BR-SAScore developed by Prof. Yousung Jung group at Seoul National University (contact: yousung.jung@snu.ac.kr).
 
 ## Contents
 - [Developer](#developer)
@@ -13,7 +13,7 @@ Implementation of BR-SAScore developed by Prof. Yousung Jung group at Seoul Nati
 - [License](#license)
 
 ## Developer
-Shuan Chen (shuan.micc@gmail.com)<br>
+Shuan Chen (shuan75@snu.ac.kr)<br>
 
 ## OS Requirements
 This repository has been tested on both **Linux** and **Windows** operating systems.
@@ -80,13 +80,13 @@ scorer = SAScorer(reaction_from=reaction_from, buildingblock_from=buildingblock_
 To use the BRSAScore on you own data, replace the `reaction_from` and `buildingblock_from`
 
 ## Publication
-@article{chen2021deep,
+@article{chen2024estimating,
   title={Estimating the synthetic accessibility of molecules with building block and reaction-aware SAScore},
   author={Chen, Shuan and Jung, Yousung},
   journal={Journal of Cheminformatics},
-  volume={},
-  number={},
-  pages={},
+  volume={16},
+  number={1},
+  pages={83},
   year={2024},
   publisher={Springer}
 }
