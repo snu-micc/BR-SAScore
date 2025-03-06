@@ -70,8 +70,6 @@ def prepare_RScores(args):
             for fp, cnt in RFrags.items():
                 RFrags_all[fp] += cnt
             n_rxns += 1
-        if len(RFrags_all) >= 100:
-            break
     RScores = get_scores(RFrags_all, n_rxns)
     save_scores_to_pickle(RScores, args['RScore_path']) 
     return RScores
@@ -87,8 +85,6 @@ def prepare_BScores(args):
             for fp, cnt in BFrags.items():
                 BFrags_all[fp] += cnt
             n_mols += 1
-        if len(BFrags_all) >= 100:
-            break
     BScores = get_scores(BFrags_all, n_mols)
     save_scores_to_pickle(BScores, args['BScore_path']) 
     return BScores
@@ -117,7 +113,7 @@ def main(args):
         BScores = prepare_BScores(args)
         
     BRScores = get_max_value(RScores, BScores)    
-    save_scores_to_pickle(R2Scores, args['BRScore_path']) 
+    save_scores_to_pickle(BRScores, args['BRScore_path']) 
     return
 
 if __name__ == '__main__':  
